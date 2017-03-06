@@ -7,11 +7,6 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var cook = require('./routes/cookie');
-// QMCheck page
-var qmcheck = require('./routes/qmcheck');
-var qm = require('./qm');
-var schedule = require('node-schedule');
 ////////////////////////////////////////////////////////////////////////////////
 
 
@@ -35,9 +30,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
-// Shanbay QMCheck & result page
-app.use('/qmcheck', qmcheck);
-app.use('/cookie', cook);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
